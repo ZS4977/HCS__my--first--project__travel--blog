@@ -1,7 +1,13 @@
 let d_1 = document.getElementById("scroll_down1");
 let d_2 = document.getElementById("scroll_down2");
+let temperature = document.getElementById("temperature");
+let copyright = document.getElementById("copyright");
+let top_block = document.getElementById("top_block");
+
+let pics_pic = document.querySelectorAll(".item_pic");
+let pic_res = document.getElementById("pic_res");
+
 let m_1 = false;
-let linkocity = document.getElementById("linktocity()")
 
 setInterval(function () {
   if (m_1 === false) {
@@ -15,7 +21,44 @@ setInterval(function () {
   }
 }, 1000);
 
+let key_wether = "9b2134590bea1de49510f364bec32fde";
 
-function linktocity {
-  window.location.href = "city1.html"
+async function currentWeather() {
+  let str = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key_wether}`;
+  const data = await fetch(str).then((response) => {
+    response.json().then(function (data) {
+      console.log(data);
+      if (temperature != null)
+        temperature.innerHTML = `Temperature: ${Math.floor(
+          data.main.temp - 273
+        )} °C <br /> humidity: ${data.weather[0].description}  <br /> `;
+    });
+  });
 }
+currentWeather();
+
+let date = new Date();
+let year_current = date.getFullYear();
+if (copyright != null) copyright.innerHTML = `Copyright @ ${year_current}`;
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > 300) {
+    top_block.style.display = "block";
+    top_block.style.opacity = "1";
+  } else {
+    top_block.style.display = "none";
+    top_block.style.opacity = "0";
+  }
+});
+top_block.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "instant",
+  });
+});
+
+pics_pic.forEach(function (image) {
+  image.addEventListener("click", function () {
+    pic_res.src = this.src;
+  });
+});

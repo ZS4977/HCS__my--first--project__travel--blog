@@ -10,24 +10,17 @@
 
 html {
   scroll-behavior: smooth;
-  
 }
-
-
 
 body {
   font-family: "Robotic_regular";
   margin: 0;
   padding: 0;
-  color: var (--white)
-
-
+  color: var (--white);
 }
 .wrapper {
- background-color: black;
-  
+  background-color: black;
 }
-
 
 .breaking_line {
   background-color: black;
@@ -43,9 +36,6 @@ body {
   border: solid 1px darkgreen;
 }
 
-
-
-
 @media screen and (max-width: 920px) {
   .breaking_line {
     height: 200px;
@@ -56,22 +46,45 @@ body {
   .breaking_line_arrow {
     height: 120px;
   }
-  .travel_list{
-    width: 90% !important; 
+  .travel_list {
+    width: 90% !important;
   }
 }
 
-
-.map_background{
+.map_background {
   background-color: black !important;
-
 }
-.map{
- width: 90%; 
- margin: auto;
- border-radius: 25px;
- overflow: hidden;
- padding-bottom: 200px;
- background-color: black;
+.map {
+  width: 90%;
+  margin: auto;
+  border-radius: 25px;
+  overflow: hidden;
+  padding-bottom: 200px;
+  background-color: black;
 }
 
+.footer {
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+#top_block {
+  position: fixed;
+  display: none;
+  bottom: 20px;
+  left: 20px;
+  transition: opacity 0.5s;
+  opacity: 0;
+  z-index: 100;
+  cursor: pointer;
+}
+.pictures {
+  display: flex;
+}
+.pictures img {
+  display: block;
+  width: 100px;
+}

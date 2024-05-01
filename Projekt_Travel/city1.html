@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bangkok</title>
-</head>
-<body>
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body>
     Bangkok
-</body>
+    <div id="temperature"></div>
+    <div class="pictures">
+      <img src="/images/back.jpg" class="item_pic" />
+      <img src="/images/phuket.jpg" class="item_pic" />
+      <img src="/images/chenay.jpg" class="item_pic" />
+      <img src="/images/bora_bora.jpg" class="item_pic" />
+      <img src="/images/bali.jpg" class="item_pic" />
+    </div>
+    <div class="modal_pic">
+      <img src="" id="pic_res" />
+    </div>
+    <div id="top_block">
+      <img src="icon/arrow_upp.png" />
+    </div>
+    <footer class="footer">
+      <div class="copyright" id="copyright"></div>
+    </footer>
+    <script>
+      const city = "Bangkok";
+    </script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
