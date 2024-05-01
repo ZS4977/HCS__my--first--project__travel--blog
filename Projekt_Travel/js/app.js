@@ -1,6 +1,7 @@
 let d_1 = document.getElementById("scroll_down1");
 let d_2 = document.getElementById("scroll_down2");
 let m_1 = false;
+let linkocity = document.getElementById("linktocity()")
 
 setInterval(function () {
   if (m_1 === false) {
@@ -13,3 +14,8 @@ setInterval(function () {
     m_1 = false;
   }
 }, 1000);
+
+
+function linktocity {
+  window.location.href = "city1.html"
+}
