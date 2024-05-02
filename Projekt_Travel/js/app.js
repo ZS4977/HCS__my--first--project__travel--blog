@@ -100,7 +100,7 @@ let copyright = document.getElementById("copyright");
 if (copyright != undefined) {
   let date = new Date();
   let year_current = date.getFullYear();
-  if (copyright != null) copyright.innerHTML = `Copyright @ ${year_current}`;
+  if (copyright != null) copyright.innerHTML = `Copyright @ ${year_current} all rights reserved by Marc Berger `;
 }
 
 /**/ 
@@ -127,12 +127,42 @@ let form_m = document.getElementById("form_m");
 
 function form_load(event) {
   event.preventDefault();
-  let city = document.getElementsByClassName("city")[0].value;
-  let country = document.getElementsByClassName("country")[0].value;
+  let city = document.getElementById("city").value;
+  let country = document.getElementById("country").value;
   let date_from = document.getElementById("date_from").value;
   let date_to = document.getElementById("date_to").value;
-  let description = document.getElementsByClassName("description")[0].value;
-  let res = `City: ${city} Country: ${country} Date_to: ${date_to} Date_from: ${date_from} Description: ${description}`;
-  console.log(res);
+  let description = document.getElementById("description").value;
+
+  
+  let result = `City: ${city} Country: ${country} Date_from: ${date_from} Date_to: ${date_to} Description: ${description}`;
+  
   //console.log(city, country, date_to, date_from, description);
+  console.log(result);
+  alert(`Successfully sendet!`)
 }
+
+
+//clearing all fields button 
+
+
+//
+// Get all input elements on the page and the clear button
+let inputs = document.querySelectorAll('input');
+let clearButton = document.getElementById('clearButton');
+
+
+function clearFields() {
+
+  // Loop through each input element
+ /*this line need explanation*/ inputs.forEach(function(input) {
+      input.value = '';
+  });
+}
+
+
+
+// Add a click event listener to the clear button
+clearButton.addEventListener('click', clearFields);
+
+
+/**/ 
