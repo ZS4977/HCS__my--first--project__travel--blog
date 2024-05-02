@@ -9,6 +9,9 @@ let pic_res = document.getElementById("pic_res");
 
 let btn_add = document.getElementById("btn_add");
 let form_m = document.getElementById("form_m");
+let modal_pic = document.getElementsByClassName("modal_pic")[0];
+
+let close = document.getElementsByClassName("close")[0];
 let m_1 = false;
 if (d_1 != undefined) {
   setInterval(function () {
@@ -32,9 +35,9 @@ async function currentWeather() {
     response.json().then(function (data) {
       console.log(data);
       if (temperature != null)
-        temperature.innerHTML = `Temperature: ${Math.floor(
+        temperature.innerHTML = `${Math.floor(
           data.main.temp - 273
-        )} °C <br /> humidity: ${data.weather[0].description}  <br /> `;
+        )} °C <br /> ${data.weather[0].description}  <br /> `;
     });
   });
 }
@@ -64,8 +67,14 @@ if (top_block != undefined) {
 if (pics_pic != undefined) {
   pics_pic.forEach(function (image) {
     image.addEventListener("click", function () {
+      modal_pic.style.display = "flex";
+
       pic_res.src = this.src;
     });
+  });
+
+  close.addEventListener("click", function () {
+    modal_pic.style.display = "none";
   });
 }
 
@@ -78,5 +87,7 @@ function form_load(event) {
   let date_from = document.getElementById("date_from").value;
   let date_to = document.getElementById("date_to").value;
   let description = document.getElementsByClassName("description")[0].value;
-  console.log(city, country, date_to, date_from, description);
+  let res = `City: ${city} Country: ${country} Date_to: ${date_to} Date_from: ${date_from} Description: ${description}`;
+  console.log(res);
+  //console.log(city, country, date_to, date_from, description);
 }

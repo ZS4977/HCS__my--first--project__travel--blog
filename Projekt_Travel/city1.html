@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bangkok</title>
     <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/nav_bar.css" />
   </head>
   <body>
-    Bangkok
-    <div id="temperature"></div>
+    <nav class="menu" id="menu">
+      <div class="left_section">
+        <a class="menu_about" href="#first_about"> ABOUT</a>
+        <a class="menu_locations" href="#contact"> CONTACT</a>
+      </div>
+
+      <div class="middle_section">
+        <a class="menu_marc_berger" href="/index.html"> MARC BERGER </a>
+      </div>
+
+      <div class="right_section">
+        <a class="menu_new_location" href="#location"> LOCATION</a>
+        <a class="menu_contact" href="new_location.html">NEW LOCATION</a>
+      </div>
+    </nav>
+    <div class="header_city_temp">
+      <div class="head_city">Bangkok</div>
+      <div id="temperature"></div>
+    </div>
+
     <div class="pictures">
       <img src="/images/back.jpg" class="item_pic" />
       <img src="/images/phuket.jpg" class="item_pic" />
@@ -17,7 +36,8 @@
       <img src="/images/bali.jpg" class="item_pic" />
     </div>
     <div class="modal_pic">
-      <img src="" id="pic_res" />
+      <a class="close">X</a>
+      <img src="/images/back.jpg" id="pic_res" />
     </div>
     <div id="top_block">
       <img src="icon/arrow_upp.png" />

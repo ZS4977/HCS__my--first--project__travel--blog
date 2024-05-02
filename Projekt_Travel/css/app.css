@@ -83,8 +83,54 @@ body {
 }
 .pictures {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
 }
 .pictures img {
   display: block;
   width: 100px;
+}
+.modal_pic {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  display: none;
+  flex-direction: column;
+}
+#pic_res {
+  width: 60%;
+}
+.close {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 30px;
+  background-color: rgba(255, 0, 0, 0.7);
+  padding: 15px;
+  cursor: pointer;
+}
+.item_pic {
+  cursor: pointer;
+  margin: 10px;
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+}
+.header_city_temp {
+  text-align: center;
+  line-height: 50px;
+}
+.head_city {
+  font-size: 200%;
+}
+#temperature {
+  font-size: 130%;
 }
