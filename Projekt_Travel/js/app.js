@@ -5,8 +5,8 @@
 
 let d_1 = document.getElementById("scroll_down1");
 let d_2 = document.getElementById("scroll_down2");
-
 let m_1 = false;
+
 if (d_1 != undefined) {
   setInterval(function () {
     if (m_1 === false) {
@@ -61,15 +61,6 @@ display: block;: This property sets the element as a block-level element, meanin
 
 
 
-let pics_pic = document.querySelectorAll(".item_pic");
-let pic_res = document.getElementById("pic_res");
-
-
-
-let modal_pic = document.getElementsByClassName("modal_pic")[0];
-
-let close = document.getElementsByClassName("close")[0];
-
 
 
 
@@ -84,11 +75,11 @@ async function currentWeather() {
     response.json().then(function (data) {
       console.log(data);
       if (temperature != null)
-        temperature.innerHTML = `${Math.floor(
-          data.main.temp - 273
-        )} °C <br /> ${data.weather[0].description}  <br /> `;
-    });
-  });
+      temperature.innerHTML = `${Math.floor(
+    data.main.temp - 273
+  )} °C <br /> ${data.weather[0].description}  <br /> `;
+});
+});
 }
 
 currentWeather();
@@ -106,19 +97,6 @@ if (copyright != undefined) {
 /**/ 
 
 
-if (pics_pic != undefined) {
-  pics_pic.forEach(function (image) {
-    image.addEventListener("click", function () {
-      modal_pic.style.display = "flex";
-
-      pic_res.src = this.src;
-    });
-  });
-
-  close.addEventListener("click", function () {
-    modal_pic.style.display = "none";
-  });
-}
 
 /* getting information from new location page and displaying it in cosole log*/
 
@@ -132,7 +110,7 @@ function form_load(event) {
   let date_from = document.getElementById("date_from").value;
   let date_to = document.getElementById("date_to").value;
   let description = document.getElementById("description").value;
-
+  
   
   let result = `City: ${city} Country: ${country} Date_from: ${date_from} Date_to: ${date_to} Description: ${description}`;
   
@@ -152,13 +130,12 @@ let clearButton = document.getElementById('clearButton');
 
 
 function clearFields() {
-
+  
   // Loop through each input element
- /*this line need explanation*/ inputs.forEach(function(input) {
-      input.value = '';
+  /*this line need explanation*/ inputs.forEach(function(input) {
+    input.value = '';
   });
 }
-
 
 
 // Add a click event listener to the clear button
@@ -166,3 +143,28 @@ clearButton.addEventListener('click', clearFields);
 
 
 /**/ 
+
+
+
+let pics_pic = document.querySelectorAll(".item_pic");
+let pic_res = document.getElementById("pic_res");
+let modal_pic = document.getElementsByClassName("modal_pic")[0];
+let close = document.getElementsByClassName("close")[0];
+
+
+if (pics_pic != undefined) {
+  pics_pic.forEach(function (image) {
+    image.addEventListener("click", function () {
+      modal_pic.style.display = "flex";
+      
+      pic_res.src = this.src;
+    });
+  });
+  
+  close.addEventListener("click", function () {
+    modal_pic.style.display = "none";
+  });
+}
+
+
+

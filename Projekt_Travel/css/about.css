@@ -57,8 +57,7 @@
     background-image: linear-gradient( darkgreen, darkgreen);
     background-size: 182px 2px;
     background-repeat: no-repeat;
-    background-position-x: 30px;
-    background-position-y: 100%;
+    background-position-x: 330px;
     transition: background-size .7s, background-position .5s  ease-in-out;
   }
 
