@@ -51,26 +51,8 @@ body {
   }
 }
 
-.map_background {
-  background-color: black !important;
-}
-.map {
-  width: 90%;
-  margin: auto;
-  border-radius: 25px;
-  overflow: hidden;
-  padding-bottom: 200px;
-  background-color: black;
-}
 
-.footer {
-  color: white;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  font-size: 15px;
-  padding-bottom: 20px;
-}
+
 #top_block {
   position: fixed;
   display: none;
@@ -81,16 +63,24 @@ body {
   z-index: 100;
   cursor: pointer;
 }
+
+
+
+
 .pictures {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #000;
 }
+
 .pictures img {
   display: block;
   width: 100px;
 }
+
+
+
 .modal_pic {
   position: fixed;
   display: flex;
@@ -103,9 +93,13 @@ body {
   display: none;
   flex-direction: column;
 }
+
+
 #pic_res {
   width: 60%;
 }
+
+
 .close {
   display: block;
   position: absolute;
@@ -117,6 +111,8 @@ body {
   padding: 15px;
   cursor: pointer;
 }
+
+
 .item_pic {
   cursor: pointer;
   margin: 10px;
@@ -124,13 +120,19 @@ body {
   height: 140px;
   object-fit: cover;
 }
+
+
 .header_city_temp {
   text-align: center;
   line-height: 50px;
 }
+
+
 .head_city {
   font-size: 200%;
 }
+
+
 #temperature {
   font-size: 130%;
 }

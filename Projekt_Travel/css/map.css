@@ -1,0 +1,13 @@
+.map_background {
+    background-color: black !important;
+  }
+  
+  
+  .map {
+    width: 90%;
+    margin: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    padding-bottom: 200px;
+    background-color: black;
+  }

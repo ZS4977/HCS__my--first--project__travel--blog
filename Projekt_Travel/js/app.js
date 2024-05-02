@@ -1,17 +1,11 @@
+
+
+
+/* creating animations timer for arrows header */ 
+
 let d_1 = document.getElementById("scroll_down1");
 let d_2 = document.getElementById("scroll_down2");
-let temperature = document.getElementById("temperature");
-let copyright = document.getElementById("copyright");
-let top_block = document.getElementById("top_block");
 
-let pics_pic = document.querySelectorAll(".item_pic");
-let pic_res = document.getElementById("pic_res");
-
-let btn_add = document.getElementById("btn_add");
-let form_m = document.getElementById("form_m");
-let modal_pic = document.getElementsByClassName("modal_pic")[0];
-
-let close = document.getElementsByClassName("close")[0];
 let m_1 = false;
 if (d_1 != undefined) {
   setInterval(function () {
@@ -27,7 +21,62 @@ if (d_1 != undefined) {
   }, 1000);
 }
 
+/*not finish need to add opacity*/
+/**/ 
+
+
+
+
+/* scroll all the way to the top  */
+  let top_block = document.getElementById("top_block");
+
+
+
+  if (top_block != undefined) {
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 300) {
+        top_block.style.display = "block";
+        top_block.style.opacity = "1";
+      } else {
+        top_block.style.display = "none";
+        top_block.style.opacity = "0";
+      }
+    });
+    top_block.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        /*behavior: "instant",*/
+      });
+    });
+  }
+  
+/*
+display: none;: This property completely removes the element from the document flow. It's as if the element doesn't exist on the page at all
+
+display: block;: This property sets the element as a block-level element, meaning it will start on a new line and stretch out to fill the width of its container by default
+
+*/ 
+
+
+
+
+
+let pics_pic = document.querySelectorAll(".item_pic");
+let pic_res = document.getElementById("pic_res");
+
+
+
+let modal_pic = document.getElementsByClassName("modal_pic")[0];
+
+let close = document.getElementsByClassName("close")[0];
+
+
+
+
+/* coding Weather with API key */ 
+
 let key_wether = "9b2134590bea1de49510f364bec32fde";
+let temperature = document.getElementById("temperature");
 
 async function currentWeather() {
   let str = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key_wether}`;
@@ -41,29 +90,22 @@ async function currentWeather() {
     });
   });
 }
+
 currentWeather();
+
+
+/* copyright date auto update (footer)*/ 
+let copyright = document.getElementById("copyright");
+
 if (copyright != undefined) {
   let date = new Date();
   let year_current = date.getFullYear();
   if (copyright != null) copyright.innerHTML = `Copyright @ ${year_current}`;
 }
-if (top_block != undefined) {
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset > 300) {
-      top_block.style.display = "block";
-      top_block.style.opacity = "1";
-    } else {
-      top_block.style.display = "none";
-      top_block.style.opacity = "0";
-    }
-  });
-  top_block.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-  });
-}
+
+/**/ 
+
+
 if (pics_pic != undefined) {
   pics_pic.forEach(function (image) {
     image.addEventListener("click", function () {
@@ -78,7 +120,10 @@ if (pics_pic != undefined) {
   });
 }
 
-/**обработка формы new location*/
+/* getting information from new location page and displaying it in cosole log*/
+
+let btn_add = document.getElementById("btn_add");
+let form_m = document.getElementById("form_m");
 
 function form_load(event) {
   event.preventDefault();
