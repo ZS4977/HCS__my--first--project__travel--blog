@@ -1,5 +1,5 @@
 .header {
-    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, .66) 16%, rgba(0, 0, 0, 0) 35%), url('/images/back.jpg'); 
+    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, .66) 16%, rgba(0, 0, 0, 0) 35%), url('/Projekt_Travel/images/back.jpg'); 
     background-size: cover; 
     background-position: bottom;
     height: 100vh; 

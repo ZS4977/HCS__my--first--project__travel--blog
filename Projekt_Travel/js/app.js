@@ -117,6 +117,8 @@ function form_load(event) {
   //console.log(city, country, date_to, date_from, description);
   console.log(result);
   alert(`Successfully sendet!`)
+  clearFields()
+
 }
 
 
@@ -125,7 +127,7 @@ function form_load(event) {
 
 //
 // Get all input elements on the page and the clear button
-let inputs = document.querySelectorAll('input');
+let inputs = document.querySelectorAll('input', "textarea");
 let clearButton = document.getElementById('clearButton');
 
 
@@ -137,9 +139,10 @@ function clearFields() {
   });
 }
 
-
+if (clearButton != undefined) {
 // Add a click event listener to the clear button
 clearButton.addEventListener('click', clearFields);
+}
 
 
 /**/ 
