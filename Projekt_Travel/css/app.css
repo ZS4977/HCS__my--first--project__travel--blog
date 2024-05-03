@@ -51,6 +51,8 @@ body {
   }
 }
 
+
+
 #top_block {
   position: fixed;
   display: none;
@@ -61,6 +63,9 @@ body {
   z-index: 100;
   cursor: pointer;
 }
+
+
+
 
 .pictures {
   display: flex;
@@ -73,6 +78,8 @@ body {
   display: block;
   width: 100px;
 }
+
+
 
 .modal_pic {
   position: fixed;
@@ -87,9 +94,11 @@ body {
   flex-direction: column;
 }
 
+
 #pic_res {
   width: 60%;
 }
+
 
 .close {
   display: block;
@@ -103,6 +112,7 @@ body {
   cursor: pointer;
 }
 
+
 .item_pic {
   cursor: pointer;
   margin: 10px;
@@ -111,20 +121,18 @@ body {
   object-fit: cover;
 }
 
+
 .header_city_temp {
   text-align: center;
   line-height: 50px;
 }
 
+
 .head_city {
   font-size: 200%;
 }
 
+
 #temperature {
   font-size: 130%;
-}
-.text_city {
-  width: 90%;
-  margin: auto;
-  text-align: center;
 }
