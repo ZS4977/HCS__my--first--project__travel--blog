@@ -86,6 +86,11 @@ display: block;: This property sets the element as a block-level element, meanin
   let btn_add = document.getElementById("btn_add");
   let form_m = document.getElementById("form_m");
 
+  if (btn_add !== null) {
+    btn_add.addEventListener("click", form_load);
+    
+}
+
   function form_load(event) {
     event.preventDefault();
     let city = document.getElementById("city").value;
@@ -99,6 +104,8 @@ display: block;: This property sets the element as a block-level element, meanin
     //console.log(city, country, date_to, date_from, description);
     console.log(result);
     alert(`Successfully sendet!`);
+    clearFields;
+    
   }
 
   //clearing all fields button
@@ -141,7 +148,7 @@ display: block;: This property sets the element as a block-level element, meanin
         pic_res.src = this.src;
       });
     });
-
+    
     close.addEventListener("click", function () {
       modal_pic.style.display = "none";
     });
